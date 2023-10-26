@@ -1,0 +1,40 @@
+.card_container {
+  height: 260px;
+  width: 300px;
+  margin: 40px 20px;
+  cursor: pointer;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-direction: column;
+}
+
+.image_box {
+  border: solid rgb(0, 0, 0) 1px;
+  border-radius: 2px;
+  width: 300px;
+  height: 200px;
+  overflow: hidden;
+}
+
+.bike_image {
+  height: 100%;
+  width: 100%;
+}
+
+.bike_brand {
+  font-size: 0.8rem;
+  color: rgb(24, 24, 24);
+  font-weight: 300;
+  font-style: italic;
+  font-family: "Montserrat", sans-serif;
+  margin: 10px 5px 5px 5px;
+}
+
+.bike_model {
+  font-size: 1.2rem;
+  color: rgb(0, 0, 0);
+  font-weight: 600;
+  font-family: "Montserrat", sans-serif;
+  margin: 2px 5px;
+}

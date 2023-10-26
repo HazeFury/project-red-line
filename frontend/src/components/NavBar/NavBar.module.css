@@ -1,0 +1,153 @@
+.navbar_container {
+  height: 100px;
+  width: 100%;
+  background: linear-gradient(
+    0deg,
+    rgba(15, 15, 15, 0) 0%,
+    rgba(15, 15, 15, 1) 100%
+  );
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: absolute;
+  top: 0;
+}
+
+.pb_logo {
+  height: 70px;
+  background-color: rgba(255, 255, 255, 0.504);
+  border-radius: 30%;
+  margin: 25px 20px;
+}
+
+.menu_box {
+  color: white;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.menu_box p {
+  margin: 0 20px;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 700;
+  font-size: 1.2rem;
+  cursor: pointer;
+  transition: all 0.2s ease-in;
+}
+
+.menu_box p:hover {
+  color: rgb(255, 100, 100);
+}
+
+.input_box {
+  background-color: rgb(215, 215, 215);
+  width: 250px;
+  height: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  flex-direction: column;
+  position: absolute;
+  top: 0;
+  right: 100px;
+  z-index: 99;
+  animation: open-login 0.3s ease;
+}
+.input_box_close {
+  background-color: rgb(215, 215, 215);
+  width: 250px;
+  height: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  flex-direction: column;
+  position: absolute;
+  top: -200px;
+  right: 100px;
+  z-index: 99;
+  animation: close-login 0.3s ease;
+}
+
+.input_box input {
+  margin: 5px 0;
+  height: 30px;
+  font-size: 1rem;
+  padding: 0 5px;
+  border-radius: 5px;
+}
+
+.menu_burger {
+  display: none;
+  z-index: 99999;
+  position: fixed;
+  top: 0;
+  right: 0;
+}
+
+.sidebar_open {
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  right: 0;
+  background-color: rgba(50, 50, 50, 0.9);
+  animation: open-menu 0.3s ease;
+  overflow: hidden;
+  z-index: 99;
+}
+
+.sidebar_close {
+  width: 100vw;
+  height: 100vh;
+  max-width: 300px;
+  position: fixed;
+  right: -300px;
+  background-color: rgba(50, 50, 50, 0.9);
+  animation: close-menu 0.3s ease;
+  overflow: hidden;
+}
+
+@keyframes open-menu {
+  from {
+    transform: translateX(300px);
+  }
+  to {
+    transform: translateX(0px);
+  }
+}
+@keyframes close-menu {
+  from {
+    transform: translateX(-300px);
+  }
+  to {
+    transform: translateX(0px);
+  }
+}
+
+@keyframes open-login {
+  from {
+    transform: translateY(-100px);
+  }
+  to {
+    transform: translateY(0px);
+  }
+}
+@keyframes close-login {
+  from {
+    transform: translateY(100px);
+  }
+  to {
+    transform: translateY(0px);
+  }
+}
+
+@media screen and (max-width: 962px) {
+  .menu_box,
+  .login_box,
+  .burger_btn {
+    display: none;
+  }
+  .menu_burger {
+    display: block;
+  }
+}

@@ -1,0 +1,50 @@
+.category_container {
+  height: fit-content;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.category {
+  width: 400px;
+  height: 700px;
+  margin: 40px 10px;
+  border-radius: 4px;
+  overflow: hidden;
+  cursor: pointer;
+  transition: all 0.2s ease-in;
+  filter: brightness(0.7);
+}
+
+.bg_color {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 400px;
+  height: 700px;
+}
+
+.category_roadster {
+  background: url("src/assets/roadster.png");
+}
+
+.category_sport {
+  background: url("src/assets/sport.png");
+}
+
+.category_custom {
+  background: url("src/assets/custom.png");
+}
+
+.category_title {
+  color: rgb(255, 255, 255);
+  font-size: 2rem;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 900;
+}
+
+.category:hover {
+  scale: 1.05;
+  filter: brightness(1);
+}

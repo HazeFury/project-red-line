@@ -1,0 +1,20 @@
+.footer_container {
+  height: 100px;
+  background-color: rgb(255, 100, 100);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 20px;
+  font-family: "Raleway", sans-serif;
+}
+
+.footer_container p {
+  font-family: "Raleway", sans-serif;
+  font-weight: 600;
+  font-size: 1.4rem;
+}
+
+.pb_logo {
+  height: 100px;
+  margin: 0 20px;
+}
