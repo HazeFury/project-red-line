@@ -7,6 +7,8 @@ import PreviewAbout from "../components/Home/PreviewAbout";
 import Footer from "../components/Footer/Footer";
 import styles from "./Home.module.css";
 
+import { MotorcyclesProvider } from "../contexts/motorcyclesContext";
+
 export default function Home() {
   return (
     <>
@@ -14,7 +16,9 @@ export default function Home() {
       <header className={styles.header_home} />
       <main>
         <PreviewBikes />
-        <RecentMotorcycles />
+        <MotorcyclesProvider>
+          <RecentMotorcycles />
+        </MotorcyclesProvider>
         <PreviewCategory />
         <PreviewAbout />
       </main>
