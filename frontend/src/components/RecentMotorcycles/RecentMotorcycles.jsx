@@ -23,14 +23,11 @@ function RecentMotorcycles() {
     (motorcycleA, motorcycleB) => motorcycleA.year - motorcycleB.year < 0
   );
 
-  // Et on ne garde que les 5 premiers résultats
-  const mostRecentMotorcycles = motorcycles.slice(0, 5);
-
   return (
     <div>
-      <h2 className={styles.section_title}>Les meilleures ventes du mois</h2>
+      <h2 className={styles.section_title}>Les dernières météo du mois</h2>
       <ul>
-        {mostRecentMotorcycles.map((motorcycle, index) => (
+        {motorcycles.map((motorcycle, index) => (
           <li className={styles.sales_list} key={motorcycle.model}>
             {index + 1} - {motorcycle.make} {motorcycle.model} (
             {motorcycle.year})
