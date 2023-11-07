@@ -2,7 +2,15 @@ import React from "react";
 import { useMotorcyclesContext } from "../../contexts/motorcyclesContext";
 
 function RecentMotorcycles() {
-  const { motorcycles } = useMotorcyclesContext();
+  const { motorcycles, loading, error } = useMotorcyclesContext();
+
+  if (loading) {
+    return <p>Loading...</p>;
+  }
+
+  if (error) {
+    return <p>Error ! {error}</p>;
+  }
 
   // la méthode sort fonctionne de la manière suivante :
   // je dois lui expliquer comment comparer deux éléments dans

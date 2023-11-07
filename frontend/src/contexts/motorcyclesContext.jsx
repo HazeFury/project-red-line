@@ -7,42 +7,54 @@ import React, {
 } from "react";
 import PropTypes from "prop-types";
 
+const API_KEY = "DW/WYj7E5HAyagMw5XFjCw==vB909yPJs9C0NV5b";
+const API_BASE_ENDPOINT =
+  "https://api.api-ninjas.com/v1/motorcycles?make=Kawasaki&model=Ninja";
+
 // Étape 1 : créer un context "React" basique
 const MotorcyclesContext = createContext();
 
 // Étape 2 : créer le provider de mon context
 export function MotorcyclesProvider({ children }) {
   const [motorcycles, setMotorcycles] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
 
   useEffect(() => {
-    setMotorcycles([
-      {
-        make: "constructeurTruc0",
-        model: "modelMachin0",
-        year: "2000",
+    setLoading(true);
+
+    // Et donc dans le cadre d'une API, notre contexte va contenir les données
+    // d'un endpoint de notre API
+    fetch(API_BASE_ENDPOINT, {
+      headers: {
+        "X-Api-Key": API_KEY,
       },
-      {
-        make: "constructeurTruc1",
-        model: "modelMachin1",
-        year: "2001",
-      },
-      {
-        make: "constructeurTruc2",
-        model: "modelMachin2",
-        year: "2002",
-      },
-    ]);
+    })
+      .then((response) => {
+        if (!response.ok) {
+          throw new Error("Failed to fetch data");
+        }
+        return response.json();
+      })
+      .then((data) => {
+        setMotorcycles(data);
+        setLoading(false);
+      })
+      .catch((err) => {
+        setError(err.message);
+        setLoading(false);
+      });
   }, []);
 
-  // /!\ ÉTAPE INTERMEDIAIRE /!\ j'utilise useMemo sinon
-  // eslint me casse les pieds pour mon commit intermédiaire
-  // bon et sinon pour de vrai : dans un cadre de context, le useEffect
-  // va être appellé de multiples fois (et donc, malgrés le [] dans useEffect)
-  // et donc le motorcycles va changer plein de fois, un comportement qui ne
-  // match pas avec la logique de React
-  const contextValue = useMemo(() => {
-    return { motorcycles };
-  }, [motorcycles]);
+  // Ha ! finalement, il faut toujours garder le useMemo
+  const contextValue = useMemo(
+    () => ({
+      motorcycles,
+      loading,
+      error,
+    }),
+    [motorcycles, loading, error]
+  );
 
   return (
     <MotorcyclesContext.Provider value={contextValue}>
