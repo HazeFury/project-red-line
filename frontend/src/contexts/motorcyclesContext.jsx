@@ -9,7 +9,7 @@ import PropTypes from "prop-types";
 
 const API_KEY = "DW/WYj7E5HAyagMw5XFjCw==vB909yPJs9C0NV5b";
 const API_BASE_ENDPOINT =
-  "https://api.api-ninjas.com/v1/motorcycles?make=Kawasaki&model=Ninja";
+  "https://api.api-ninjas.com/v1/motorcycles?make=Kawasaki&model=Z";
 
 // Étape 1 : créer un context "React" basique
 const MotorcyclesContext = createContext();

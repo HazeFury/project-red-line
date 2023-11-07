@@ -1,5 +1,6 @@
 import React from "react";
 import { useMotorcyclesContext } from "../../contexts/motorcyclesContext";
+import styles from "./RecentMotorcycles.module.css";
 
 function RecentMotorcycles() {
   const { motorcycles, loading, error } = useMotorcyclesContext();
@@ -27,11 +28,12 @@ function RecentMotorcycles() {
 
   return (
     <div>
-      <h2>Les dernières moto sorties !</h2>
+      <h2 className={styles.section_title}>Les meilleures ventes du mois</h2>
       <ul>
-        {mostRecentMotorcycles.map((motorcycle) => (
-          <li key={motorcycle.model}>
-            {motorcycle.make} {motorcycle.model} ({motorcycle.year})
+        {mostRecentMotorcycles.map((motorcycle, index) => (
+          <li className={styles.sales_list} key={motorcycle.model}>
+            {index + 1} - {motorcycle.make} {motorcycle.model} (
+            {motorcycle.year})
           </li>
         ))}
       </ul>
