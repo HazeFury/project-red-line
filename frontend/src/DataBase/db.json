@@ -22,5 +22,53 @@
     "model": "MT-07",
     "brand": "Yamaha",
     "image": "https://images.unsplash.com/photo-1682972085748-cc91aa745468?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1882&q=80"
+  },
+  {
+    "id": 5,
+    "model": "ER6-N",
+    "brand": "Kawasaki",
+    "image": "https://images.unsplash.com/photo-1590257430942-7c609ed74caa?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80"
+  },
+  {
+    "id": 6,
+    "model": "ZX-6R",
+    "brand": "Kawasaki",
+    "image": "https://images.unsplash.com/photo-1580310614729-ccd69652491d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80"
+  },
+  {
+    "id": 7,
+    "model": "Sports Glide",
+    "brand": "Harley Davidson",
+    "image": "https://images.unsplash.com/photo-1558980664-2506fca6bfc2?auto=format&fit=crop&q=80&w=2070&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+  },
+  {
+    "id": 8,
+    "model": "MT-07",
+    "brand": "Yamaha",
+    "image": "https://images.unsplash.com/photo-1682972085748-cc91aa745468?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1882&q=80"
+  },
+  {
+    "id": 9,
+    "model": "ER6-N",
+    "brand": "Kawasaki",
+    "image": "https://images.unsplash.com/photo-1590257430942-7c609ed74caa?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80"
+  },
+  {
+    "id": 10,
+    "model": "ZX-6R",
+    "brand": "Kawasaki",
+    "image": "https://images.unsplash.com/photo-1580310614729-ccd69652491d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80"
+  },
+  {
+    "id": 11,
+    "model": "Sports Glide",
+    "brand": "Harley Davidson",
+    "image": "https://images.unsplash.com/photo-1558980664-2506fca6bfc2?auto=format&fit=crop&q=80&w=2070&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+  },
+  {
+    "id": 12,
+    "model": "MT-07",
+    "brand": "Yamaha",
+    "image": "https://images.unsplash.com/photo-1682972085748-cc91aa745468?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1882&q=80"
   }
 ]

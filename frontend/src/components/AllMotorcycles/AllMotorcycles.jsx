@@ -1,7 +1,7 @@
 import React from "react";
 import { Button } from "@mui/material";
-import BikeCard from "./BikeCard";
-import styles from "./PreviewBikes.module.css";
+import BikeCard from "../Home/BikeCard";
+import styles from "../Home/PreviewBikes.module.css";
 import Data from "../../DataBase/db.json";
 
 export default function PreviewBikes() {

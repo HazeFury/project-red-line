@@ -19,7 +19,7 @@ export default function SideBar({ closeModal }) {
             Accueil
           </button>
         </Link>
-        <Link to="/" className={styles.side_link_class}>
+        <Link to="/bikes" className={styles.side_link_class}>
           <button
             onClick={handleClose}
             type="button"
@@ -28,7 +28,7 @@ export default function SideBar({ closeModal }) {
             Motos
           </button>
         </Link>
-        <Link to="/" className={styles.side_link_class}>
+        <Link to="/about" className={styles.side_link_class}>
           <button
             onClick={handleClose}
             type="button"
@@ -37,7 +37,7 @@ export default function SideBar({ closeModal }) {
             À propos
           </button>
         </Link>
-        <Link to="/" className={styles.side_link_class}>
+        <Link to="/contact" className={styles.side_link_class}>
           <button
             onClick={handleClose}
             type="button"

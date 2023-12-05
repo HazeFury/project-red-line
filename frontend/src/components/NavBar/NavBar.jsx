@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 import { Button } from "@mui/material";
 import AccountCircleIcon from "@mui/icons-material/AccountCircle";
 import MenuOutlinedIcon from "@mui/icons-material/MenuOutlined";
@@ -56,10 +57,10 @@ export default function NavBar() {
           alt="Proxima-Bike logo"
         />
         <div className={styles.menu_box}>
-          <p>Accueil</p>
-          <p>Motos</p>
-          <p>À propos</p>
-          <p>Contact</p>
+          <Link to="/">Accueil</Link>
+          <Link to="/bikes">Motos</Link>
+          <Link to="/about">À propos</Link>
+          <Link to="/contact">Contact</Link>
         </div>
         <div className={styles.burger_btn}>
           <Button
