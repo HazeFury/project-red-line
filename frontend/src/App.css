@@ -124,6 +124,11 @@ table {
 }
 
 body {
-  background-color: rgb(236, 239, 241);
+  background: radial-gradient(
+    circFFle,
+    rgba(60, 60, 89, 1) 0%,
+    rgba(25, 25, 40, 1) 100%
+  );
   min-width: 300px;
+  color: white;
 }

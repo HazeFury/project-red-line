@@ -5,7 +5,11 @@ import { createTheme } from "@mui/material";
 import { ThemeProvider } from "@emotion/react";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
-import Home from "./pages/Home";
+import App from "./App";
+import Home from "./pages/Home/Home";
+import BikesList from "./pages/BikesList/BikesList";
+import About from "./pages/About/About";
+import Contact from "./pages/Contact/Contact";
 
 const theme = createTheme({
   palette: {
@@ -20,8 +24,25 @@ const theme = createTheme({
 
 const router = createBrowserRouter([
   {
-    path: "/",
-    element: <Home />,
+    element: <App />,
+    children: [
+      {
+        path: "/",
+        element: <Home />,
+      },
+      {
+        path: "/bikes",
+        element: <BikesList />,
+      },
+      {
+        path: "/about",
+        element: <About />,
+      },
+      {
+        path: "/contact",
+        element: <Contact />,
+      },
+    ],
   },
 ]);
 

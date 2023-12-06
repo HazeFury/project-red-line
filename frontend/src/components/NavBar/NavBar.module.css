@@ -27,8 +27,10 @@
   align-items: center;
 }
 
-.menu_box p {
+.menu_box a {
   margin: 0 20px;
+  color: white;
+  text-decoration: none;
   font-family: "Montserrat", sans-serif;
   font-weight: 700;
   font-size: 1.2rem;
@@ -36,7 +38,7 @@
   transition: all 0.2s ease-in;
 }
 
-.menu_box p:hover {
+.menu_box a:hover {
   color: rgb(255, 100, 100);
 }
 
