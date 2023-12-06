@@ -17,19 +17,29 @@ export function MotorcyclesProvider({ children }) {
   useEffect(() => {
     setMotorcycles([
       {
-        make: "constructeurTruc0",
-        model: "modelMachin0",
-        year: "2000",
+        make: "Yamaha",
+        model: "MT-07",
+        year: "2020",
       },
       {
-        make: "constructeurTruc1",
-        model: "modelMachin1",
-        year: "2001",
+        make: "Kawasaki",
+        model: "ER6-N",
+        year: "2016",
       },
       {
-        make: "constructeurTruc2",
-        model: "modelMachin2",
-        year: "2002",
+        make: "Honda",
+        model: "CB 500",
+        year: "2022",
+      },
+      {
+        make: "BMW",
+        model: "GS 1250",
+        year: "2021",
+      },
+      {
+        make: "Suzuki",
+        model: "Bandit 650",
+        year: "2008",
       },
     ]);
   }, []);

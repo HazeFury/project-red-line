@@ -24,7 +24,7 @@
 
 .bike_brand {
   font-size: 0.8rem;
-  color: rgb(24, 24, 24);
+  color: rgb(255, 255, 255);
   font-weight: 300;
   font-style: italic;
   font-family: "Montserrat", sans-serif;
@@ -33,7 +33,7 @@
 
 .bike_model {
   font-size: 1.2rem;
-  color: rgb(0, 0, 0);
+  color: rgb(255, 255, 255);
   font-weight: 600;
   font-family: "Montserrat", sans-serif;
   margin: 2px 5px;

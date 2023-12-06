@@ -6,7 +6,6 @@ function RecentMotorcycles() {
 
   return (
     <div>
-      <h2>Les dernières moto sorties !</h2>
       <ul>
         {motorcycles.map((motorcycle) => (
           <li key={motorcycle.model}>

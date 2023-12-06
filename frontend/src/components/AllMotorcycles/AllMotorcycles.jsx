@@ -1,17 +1,16 @@
 import React from "react";
 import { Button } from "@mui/material";
 import BikeCard from "../Home/BikeCard";
-import styles from "../Home/PreviewBikes.module.css";
+import styles from "./AllMotorcycles.module.css";
 import Data from "../../DataBase/db.json";
 
-export default function PreviewBikes() {
+export default function AllMotorcycles() {
   const bikes = Data;
 
   return (
     <section className={styles.preview_bike_component}>
-      <h1 className={styles.preview_bike_title}>Les motos à la une</h1>
       <div className={styles.preview_bike_container}>
-        {bikes.slice(0, 4).map((bike) => (
+        {bikes.slice(0, 12).map((bike) => (
           <BikeCard key={bike.id} bike={bike} />
         ))}
       </div>

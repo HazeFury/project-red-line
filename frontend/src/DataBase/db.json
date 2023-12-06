@@ -25,50 +25,50 @@
   },
   {
     "id": 5,
-    "model": "ER6-N",
-    "brand": "Kawasaki",
-    "image": "https://images.unsplash.com/photo-1590257430942-7c609ed74caa?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80"
+    "model": "Panigale 899",
+    "brand": "Ducati",
+    "image": "https://images.unsplash.com/photo-1547054728-fcb8828cc832?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80"
   },
   {
     "id": 6,
-    "model": "ZX-6R",
-    "brand": "Kawasaki",
-    "image": "https://images.unsplash.com/photo-1580310614729-ccd69652491d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80"
-  },
-  {
-    "id": 7,
-    "model": "Sports Glide",
-    "brand": "Harley Davidson",
-    "image": "https://images.unsplash.com/photo-1558980664-2506fca6bfc2?auto=format&fit=crop&q=80&w=2070&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-  },
-  {
-    "id": 8,
-    "model": "MT-07",
-    "brand": "Yamaha",
-    "image": "https://images.unsplash.com/photo-1682972085748-cc91aa745468?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1882&q=80"
-  },
-  {
-    "id": 9,
-    "model": "ER6-N",
-    "brand": "Kawasaki",
-    "image": "https://images.unsplash.com/photo-1590257430942-7c609ed74caa?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80"
-  },
-  {
-    "id": 10,
-    "model": "ZX-6R",
-    "brand": "Kawasaki",
-    "image": "https://images.unsplash.com/photo-1580310614729-ccd69652491d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80"
-  },
-  {
-    "id": 11,
-    "model": "Sports Glide",
-    "brand": "Harley Davidson",
-    "image": "https://images.unsplash.com/photo-1558980664-2506fca6bfc2?auto=format&fit=crop&q=80&w=2070&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+    "model": "S1000 RR",
+    "brand": "BMW",
+    "image": "https://images.unsplash.com/photo-1635073943212-f34dfbfcc3b0?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80"
   },
   {
     "id": 12,
-    "model": "MT-07",
+    "model": "GSX 8S",
+    "brand": "Suzuki",
+    "image": "https://ultimatemotorcycling.com/wp-content/uploads/2023/05/2023-suzuki-gsx-8s-review-10.webp"
+  },
+  {
+    "id": 7,
+    "model": "R6",
     "brand": "Yamaha",
-    "image": "https://images.unsplash.com/photo-1682972085748-cc91aa745468?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1882&q=80"
+    "image": "https://images.unsplash.com/photo-1640418070457-88f35a266e2d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80"
+  },
+  {
+    "id": 8,
+    "model": "Scout Rogue",
+    "brand": "Indian",
+    "image": "https://moto-station.com/wp-content/uploads/2022/02/03/2022-imc-rogue-thunder-black-smoke-lifestyle-0489.jpg"
+  },
+  {
+    "id": 9,
+    "model": "CBR 1000RR",
+    "brand": "Honda",
+    "image": "https://images.caradisiac.com/images/9/5/3/3/179533/S8-nouveaute-2020-honda-cbr-1000-rr-r-4r-dans-v4-609281.jpg"
+  },
+  {
+    "id": 10,
+    "model": "Ninja 650",
+    "brand": "Kawasaki",
+    "image": "https://images.unsplash.com/photo-1599819811279-d5ad9cccf838?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80"
+  },
+  {
+    "id": 11,
+    "model": "Tiger 900",
+    "brand": "Triumph",
+    "image": "https://images.unsplash.com/photo-1589288415563-eaa105f109f3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80"
   }
 ]
