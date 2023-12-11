@@ -6,7 +6,11 @@ export default function BikeCard({ bike }) {
   return (
     <figure className={styles.card_container}>
       <div className={styles.image_box}>
-        <img className={styles.bike_image} src={bike.image} alt={bike.model} />
+        <img
+          className={styles.bike_image}
+          src={bike.image_url}
+          alt={bike.model}
+        />
       </div>
       <p className={styles.bike_brand}>{bike.brand}</p>
       <p className={styles.bike_model}>{bike.model}</p>
@@ -16,7 +20,7 @@ export default function BikeCard({ bike }) {
 
 BikeCard.propTypes = {
   bike: PropTypes.shape({
-    image: PropTypes.string.isRequired,
+    image_url: PropTypes.string.isRequired,
     brand: PropTypes.string.isRequired,
     model: PropTypes.string.isRequired,
   }).isRequired,

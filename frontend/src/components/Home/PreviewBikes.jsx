@@ -1,12 +1,23 @@
-import React from "react";
+import axios from "axios";
+import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { Button } from "@mui/material";
 import BikeCard from "./BikeCard";
 import styles from "./PreviewBikes.module.css";
-import Data from "../../DataBase/db.json";
 
 export default function PreviewBikes() {
-  const bikes = Data;
+  const [bikes, setBikes] = useState([]);
+
+  useEffect(() => {
+    axios
+      .get("http://localhost:3310/api/bikes")
+      .then((res) => {
+        setBikes(res.data);
+      })
+      .catch((err) => {
+        console.error(err);
+      });
+  }, []);
 
   const scrollToTop = () => {
     window.scrollTo({

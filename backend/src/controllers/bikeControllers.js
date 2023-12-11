@@ -1,7 +1,8 @@
-const bikes = require("../Data/db.json");
+const tables = require("../tables");
 
 const getBikes = async (req, res) => {
   try {
+    const bikes = await tables.bikes.getAllBikes();
     res.status(200).send(bikes);
   } catch (err) {
     console.error(err);
