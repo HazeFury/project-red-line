@@ -32,7 +32,7 @@ export default function AllMotorcycles() {
           <BikeCard key={bike.id} bike={bike} />
         ))}
       </div>
-      <Button color="secondary" variant="contained" sx={{ my: 2 }}>
+      <Button color="primary" variant="contained" sx={{ my: 2 }}>
         Voir plus
       </Button>
     </section>

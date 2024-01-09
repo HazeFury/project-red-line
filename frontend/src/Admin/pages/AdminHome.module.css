@@ -1,0 +1,17 @@
+.admin_home {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.admin_home_container {
+  background-color: aliceblue;
+  width: 80vw;
+  max-width: 600px;
+  height: 80vh;
+  max-height: 500px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 2rem;
+}
