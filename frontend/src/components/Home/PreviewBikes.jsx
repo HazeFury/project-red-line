@@ -36,7 +36,7 @@ export default function PreviewBikes() {
       </div>
       <Link to="/bikes">
         <Button
-          color="secondary"
+          color="primary"
           variant="contained"
           sx={{ my: 2 }}
           onClick={scrollToTop}

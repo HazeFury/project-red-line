@@ -34,7 +34,7 @@ export default function PreviewAbout() {
         magni necessitatibus esse corrupti saepe odit dolor minima impedit quas
         delectus? Repudiandae.
       </p>
-      <Button color="secondary" variant="contained" sx={{ my: 8 }}>
+      <Button color="primary" variant="contained" sx={{ my: 8 }}>
         Voir plus
       </Button>
     </section>

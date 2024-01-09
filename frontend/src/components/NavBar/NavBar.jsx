@@ -5,7 +5,6 @@ import AccountCircleIcon from "@mui/icons-material/AccountCircle";
 import MenuOutlinedIcon from "@mui/icons-material/MenuOutlined";
 import CloseOutlinedIcon from "@mui/icons-material/CloseOutlined";
 import SideBar from "./SideBar";
-import Login from "./Login";
 import styles from "./NavBar.module.css";
 
 export default function NavBar() {
@@ -40,7 +39,16 @@ export default function NavBar() {
           openLogin ? `${styles.input_box}` : `${styles.input_box_close}`
         }
       >
-        <Login setOpenLogin={setOpenLogin} />
+        <Link to="/login">
+          <Button
+            type="submit"
+            color="primary"
+            variant="contained"
+            sx={{ my: 2 }}
+          >
+            se connecter
+          </Button>
+        </Link>
         <Link
           onClick={handleLoginclose}
           to="/register"

@@ -3,11 +3,11 @@ SET FOREIGN_KEY_CHECKS = 0;
 DROP TABLE IF EXISTS `user`;
 CREATE TABLE `user` (
   id INT PRIMARY KEY NOT NULL AUTO_INCREMENT,
+  firstname VARCHAR(80) NOT NULL,
   email VARCHAR(80) UNIQUE NOT NULL,
   hashed_password VARCHAR(150) NOT NULL
 );
   -- lastname VARCHAR(80) NOT NULL,
-  -- firstname VARCHAR(80) NOT NULL,
   -- age INT NOT NULL,
   -- orientation VARCHAR(40),
   -- orders INT NOT NULL DEFAULT 0,

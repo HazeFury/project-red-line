@@ -7,13 +7,9 @@ import styles from "./Auth.module.css";
 
 export default function Register() {
   // États pour le mot de passe et la confirmation du mot de passe
-  const [firstname, setFirstname] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [confirmPassword, setConfirmPassword] = useState("");
 
-  const matchingPassword =
-    password === confirmPassword && password.length !== 0;
   // Hook pour la navigation
   const navigate = useNavigate();
 
@@ -24,15 +20,6 @@ export default function Register() {
   // Gestionnaire de changement du mot de passe
   const handlePasswordChange = (event) => {
     setPassword(event.target.value);
-  };
-  // Gestionnaire de changement du prénom
-  const handleFirstnameChange = (event) => {
-    setFirstname(event.target.value);
-  };
-
-  // Gestionnaire de changement de la confirmation du mot de passe
-  const handleConfirmPasswordChange = (event) => {
-    setConfirmPassword(event.target.value);
   };
 
   const notifySuccess = (text) => toast.success(text);
@@ -45,22 +32,21 @@ export default function Register() {
     try {
       // Appel à l'API pour créer un nouvel utilisateur
       const response = await fetch(
-        `${import.meta.env.VITE_BACKEND_URL}/api/users`,
+        `${import.meta.env.VITE_BACKEND_URL}/api/login`,
         {
           method: "post",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify({
             email,
             password,
-            firstname,
           }),
         }
       );
 
       // Redirection vers la page de connexion si la création réussit
-      if (response.status === 201) {
-        navigate("/login");
-        notifySuccess("Votre compte a bien été créé !");
+      if (response.status === 200) {
+        notifySuccess("Connexion réussi. Bon retour parmi nous !");
+        navigate("/");
       } else {
         // Log des détails de la réponse en cas d'échec
         console.info(response);
@@ -75,16 +61,7 @@ export default function Register() {
     <div>
       <main className={globalStyles.main_container}>
         <form className={styles.register_form} onSubmit={handleSubmit}>
-          <p className={styles.register_title}>Créer votre compte</p>
-          <TextField
-            required
-            name="firstname"
-            id="firstname"
-            label="Entrez votre prénom"
-            value={firstname}
-            onChange={handleFirstnameChange}
-            sx={{ my: 4, width: 300 }}
-          />
+          <p className={styles.register_title}>Connectez-vous</p>
           <TextField
             required
             name="email"
@@ -108,33 +85,15 @@ export default function Register() {
             type="password"
           />
 
-          <TextField
-            required
-            name="confirmPassword"
-            id="confirmPassword"
-            label="Entrez votre mot de passe"
-            color={matchingPassword ? "success" : "error"}
-            value={confirmPassword}
-            onChange={handleConfirmPasswordChange}
-            sx={{
-              my: 4,
-              width: 300,
-            }}
-            type="password"
-          />
           <Button
             type="submit"
             variant="contained"
-            disabled={
-              email === "" ||
-              password === "" ||
-              confirmPassword === "" ||
-              !matchingPassword
-            }
+            disabled={password === "" || email === ""}
             onClick={handleSubmit}
-            sx={{ mt: 3, mb: 2, backgroundColor: "rgb(51, 153, 51)" }}
+            color="primary"
+            sx={{ mt: 3, mb: 2 }}
           >
-            S'inscrire
+            Se connecter
           </Button>
         </form>
       </main>
