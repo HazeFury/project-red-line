@@ -1,0 +1,12 @@
+.input_box {
+  display: flex;
+  flex-direction: column;
+}
+
+.input_box input {
+  margin: 5px 0;
+  height: 30px;
+  font-size: 1rem;
+  padding: 0 5px;
+  border-radius: 5px;
+}

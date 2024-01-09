@@ -75,6 +75,12 @@
   border-radius: 5px;
 }
 
+.neutral_link {
+  color: white;
+  margin-top: 10px;
+  font-size: 1.2rem;
+}
+
 @media screen and (min-width: 962px) {
   .sidebar_container,
   .side_item_list,

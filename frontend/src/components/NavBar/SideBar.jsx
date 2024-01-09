@@ -54,6 +54,9 @@ export default function SideBar({ closeModal }) {
           <Button color="secondary" variant="contained" sx={{ my: 2 }}>
             se connecter
           </Button>
+          <Link to="/register" className={styles.neutral_link}>
+            Je n'ai pas encore de compte
+          </Link>
         </div>
       </div>
     </div>

@@ -6,6 +6,9 @@ const router = express.Router();
 // Define Your API Routes Here
 /* ************************************************************************* */
 
+// Import auth services for security operations
+const { hashPassword } = require("./services/Auth");
+
 // Import itemControllers module for handling item-related operations
 const itemControllers = require("./controllers/itemControllers");
 const bikeControllers = require("./controllers/bikeControllers");
@@ -24,4 +27,17 @@ router.post("/items", itemControllers.add);
 router.get("/bikes", bikeControllers.getBikes);
 
 /* ************************************************************************* */
+
+// Import userControllers module for handling user-related operations
+const userControllers = require("./controllers/userControllers");
+
+router.get("/users", userControllers.browse);
+router.get("/users/:id", userControllers.read);
+router.post("/users", hashPassword, userControllers.add);
+
+// Import authControllers module for handling auth-related operations
+const authControllers = require("./controllers/authControllers");
+
+router.post("/login", authControllers.login);
+
 module.exports = router;

@@ -10,6 +10,7 @@ import Home from "./pages/Home/Home";
 import BikesList from "./pages/BikesList/BikesList";
 import About from "./pages/About/About";
 import Contact from "./pages/Contact/Contact";
+import Register from "./pages/Auth/Register";
 
 const theme = createTheme({
   palette: {
@@ -41,6 +42,10 @@ const router = createBrowserRouter([
       {
         path: "/contact",
         element: <Contact />,
+      },
+      {
+        path: "/register",
+        element: <Register />,
       },
     ],
   },

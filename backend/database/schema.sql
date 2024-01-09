@@ -3,16 +3,16 @@ SET FOREIGN_KEY_CHECKS = 0;
 DROP TABLE IF EXISTS `user`;
 CREATE TABLE `user` (
   id INT PRIMARY KEY NOT NULL AUTO_INCREMENT,
-  lastname VARCHAR(80) NOT NULL,
-  firstname VARCHAR(80) NOT NULL,
-  mail_address VARCHAR(80) UNIQUE NOT NULL,
-  hashed_password VARCHAR(150) NOT NULL,
-  age INT NOT NULL,
-  orientation VARCHAR(40),
-  orders INT NOT NULL DEFAULT 0,
-  city VARCHAR(45) NOT NULL,
-  role VARCHAR(10) NOT NULL DEFAULT 'user'
+  email VARCHAR(80) UNIQUE NOT NULL,
+  hashed_password VARCHAR(150) NOT NULL
 );
+  -- lastname VARCHAR(80) NOT NULL,
+  -- firstname VARCHAR(80) NOT NULL,
+  -- age INT NOT NULL,
+  -- orientation VARCHAR(40),
+  -- orders INT NOT NULL DEFAULT 0,
+  -- city VARCHAR(45) NOT NULL,
+  -- role VARCHAR(10) NOT NULL DEFAULT 'user'
 DROP TABLE IF EXISTS bikes;
 CREATE TABLE bikes (
   id INT PRIMARY KEY NOT NULL AUTO_INCREMENT,
@@ -38,10 +38,10 @@ CREATE TABLE segment (
   id INT PRIMARY KEY NOT NULL AUTO_INCREMENT,
   name VARCHAR(50) NOT NULL
 );
-INSERT INTO user (lastname, firstname, mail_address, hashed_password, age, orientation, orders, city, role)
-VALUES
-  ('Doe', 'John', 'john.doe@example.com',  'hashedpassword123', 30, 'roadster', 0, 'New York', 'user'),
-  ('Smith', 'Jane', 'jane.smith@example.com', 'hashedpassword456', 25, 'sportive', 0, 'London', 'user');
+-- INSERT INTO user (lastname, firstname, mail_address, hashed_password, age, orientation, orders, city, role)
+-- VALUES
+--   ('Doe', 'John', 'john.doe@example.com',  'hashedpassword123', 30, 'roadster', 0, 'New York', 'user'),
+--   ('Smith', 'Jane', 'jane.smith@example.com', 'hashedpassword456', 25, 'sportive', 0, 'London', 'user');
 
 -- ('Yamaha'),('Honda'),('Suzuki'),('Kawasaki'),('Ducati'),('BMW'),('Triumph'),('Harley Davidson'),('Indian');
 

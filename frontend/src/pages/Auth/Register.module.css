@@ -1,0 +1,17 @@
+.register_form {
+  background-color: rgb(199, 200, 201);
+  width: 90vw;
+  max-width: 600px;
+  color: black;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 20px 0;
+}
+
+.register_title {
+  font-size: 1.8rem;
+  font-family: "Bebas Neue";
+}
