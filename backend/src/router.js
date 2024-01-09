@@ -7,7 +7,7 @@ const router = express.Router();
 /* ************************************************************************* */
 
 // Import auth services for security operations
-const { hashPassword } = require("./services/Auth");
+const { hashPassword, verifyToken } = require("./services/Auth");
 
 // Import itemControllers module for handling item-related operations
 const itemControllers = require("./controllers/itemControllers");
@@ -34,6 +34,8 @@ const userControllers = require("./controllers/userControllers");
 router.get("/users", userControllers.browse);
 router.get("/users/:id", userControllers.read);
 router.post("/users", hashPassword, userControllers.add);
+
+router.get("/welcomeadmin", verifyToken, userControllers.welcomeAdmin); // <------------- route admin
 
 // Import authControllers module for handling auth-related operations
 const authControllers = require("./controllers/authControllers");

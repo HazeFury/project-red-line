@@ -40,7 +40,7 @@ export default function NavBar() {
           openLogin ? `${styles.input_box}` : `${styles.input_box_close}`
         }
       >
-        <Login />
+        <Login setOpenLogin={setOpenLogin} />
         <Link
           onClick={handleLoginclose}
           to="/register"
