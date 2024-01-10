@@ -115,6 +115,13 @@
   overflow: hidden;
 }
 
+.logAsUser {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 500;
+  font-size: 0.9rem;
+  text-align: center;
+}
+
 @keyframes open-menu {
   from {
     transform: translateX(300px);
