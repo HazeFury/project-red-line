@@ -6,7 +6,7 @@ import { useUserContext } from "../../contexts/userContext";
 import globalStyles from "../GlobalPageStyle.module.css";
 import styles from "./Auth.module.css";
 
-export default function Register() {
+export default function Login() {
   // États pour le mot de passe et la confirmation du mot de passe
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");

@@ -21,8 +21,8 @@ export function UserContextProvider({ children }) {
   };
 
   useEffect(() => {
-    console.info("les infos du user dans le LS sont :", user); // -----------------------------------------  TO REMOVE !!
-    console.info("le token est :", token); // -----------------------------------------  TO REMOVE !!
+    console.info("les infos du user dans le LS sont :", user); // ------------------  TO REMOVE !!
+    console.info("le token est :", token); // ------------------  TO REMOVE !!
   }, [user]);
 
   const contextValue = useMemo(() => {

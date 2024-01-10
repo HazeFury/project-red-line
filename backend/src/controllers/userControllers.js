@@ -61,7 +61,7 @@ const add = async (req, res, next) => {
 
 const welcomeAdmin = (req, res, next) => {
   try {
-    res.status(200).send("La page Admin est en construction.");
+    res.status(200).json("La page Admin est en construction.");
   } catch (err) {
     // Pass any errors to the error-handling middleware
     console.error(err);

@@ -23,12 +23,14 @@ export default function AdminHome() {
       );
 
       if (response.status === 200) {
-        // console.log("la réponse à la requête est :", response.data);
-        setMessage(response.data);
+        const data = await response.json();
+        // console.log("la réponse à la requête est :", data);
+        setMessage(data);
       } else if (response.status === 401) {
         navigate("/login");
       } else {
         // Log des détails de la réponse en cas d'échec
+
         console.info(response);
       }
     } catch (err) {
@@ -46,7 +48,7 @@ export default function AdminHome() {
       <div className={styles.admin_home_container}>
         <h1>Connecté en tant que {user?.email}</h1>
         <br />
-        <p>{message ?? "pas de message"}</p>
+        <p>{message}</p>
       </div>
     </div>
   );

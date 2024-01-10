@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { Button } from "@mui/material";
+import { toast } from "react-toastify";
 import AccountCircleIcon from "@mui/icons-material/AccountCircle";
 import MenuOutlinedIcon from "@mui/icons-material/MenuOutlined";
 import CloseOutlinedIcon from "@mui/icons-material/CloseOutlined";
@@ -13,6 +14,7 @@ export default function NavBar() {
   const [openLogin, setOpenLogin] = useState(false);
   const { user, logout } = useUserContext();
   // const navigate = useNavigate();
+  const notifySuccess = (text) => toast.success(text);
 
   const handleMenu = () => {
     setOpenMenu(!openMenu);
@@ -27,6 +29,7 @@ export default function NavBar() {
   const logoutFromSession = () => {
     logout();
     handleLoginclose();
+    notifySuccess("Vous avez été correctement déconnecté");
     //  navigate("/login");
   };
 
