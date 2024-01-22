@@ -19,6 +19,7 @@ import About from "./pages/About/About";
 import Contact from "./pages/Contact/Contact";
 import Register from "./pages/Auth/Register";
 import AdminHome from "./Admin/pages/AdminHome";
+import AdminHome2 from "./Admin/pages/AdminHome2";
 import Login from "./pages/Auth/Login";
 
 const theme = createTheme({
@@ -62,6 +63,10 @@ const router = createBrowserRouter([
   {
     element: <AdminHome />,
     path: "/admin",
+  },
+  {
+    element: <AdminHome2 />,
+    path: "/admin2",
   },
 ]);
 

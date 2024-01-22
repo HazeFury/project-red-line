@@ -1,10 +1,12 @@
 import { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 import { useUserContext } from "../../contexts/userContext";
 import styles from "./AdminHome.module.css";
 
 export default function AdminHome() {
   const [message, setMessage] = useState(null);
-  const { user } = useUserContext();
+  const { user, token } = useUserContext();
+  const navigate = useNavigate();
 
   const autorisation = async () => {
     try {
@@ -15,16 +17,20 @@ export default function AdminHome() {
           method: "get",
           headers: {
             "Content-Type": "application/json",
-            Authorization: `Bearer ${user.token}`, // Inclusion du jeton JWT
+            Authorization: `Bearer ${token}`, // Inclusion du jeton JWT
           },
         }
       );
 
-      // Redirection vers la page de connexion si la création réussit
       if (response.status === 200) {
-        setMessage(response.data);
+        const data = await response.json();
+        // console.log("la réponse à la requête est :", data);
+        setMessage(data);
+      } else if (response.status === 401) {
+        navigate("/login");
       } else {
         // Log des détails de la réponse en cas d'échec
+
         console.info(response);
       }
     } catch (err) {

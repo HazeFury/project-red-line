@@ -1,15 +1,20 @@
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { Button } from "@mui/material";
+import { toast } from "react-toastify";
 import AccountCircleIcon from "@mui/icons-material/AccountCircle";
 import MenuOutlinedIcon from "@mui/icons-material/MenuOutlined";
 import CloseOutlinedIcon from "@mui/icons-material/CloseOutlined";
 import SideBar from "./SideBar";
 import styles from "./NavBar.module.css";
+import { useUserContext } from "../../contexts/userContext";
 
 export default function NavBar() {
   const [openMenu, setOpenMenu] = useState(false);
   const [openLogin, setOpenLogin] = useState(false);
+  const { user, logout } = useUserContext();
+  // const navigate = useNavigate();
+  const notifySuccess = (text) => toast.success(text);
 
   const handleMenu = () => {
     setOpenMenu(!openMenu);
@@ -19,6 +24,13 @@ export default function NavBar() {
   };
   const handleLoginclose = () => {
     setOpenLogin(false);
+  };
+
+  const logoutFromSession = () => {
+    logout();
+    handleLoginclose();
+    notifySuccess("Vous avez été correctement déconnecté");
+    //  navigate("/login");
   };
 
   useEffect(() => {
@@ -34,29 +46,51 @@ export default function NavBar() {
   }, []);
   return (
     <>
-      <div
-        className={
-          openLogin ? `${styles.input_box}` : `${styles.input_box_close}`
-        }
-      >
-        <Link to="/login">
+      {!user ? (
+        <div
+          className={
+            openLogin ? `${styles.input_box}` : `${styles.input_box_close}`
+          }
+        >
+          {" "}
+          <Link to="/login">
+            <Button
+              type="submit"
+              color="primary"
+              variant="contained"
+              sx={{ my: 2 }}
+            >
+              se connecter
+            </Button>
+          </Link>
+          <Link
+            onClick={handleLoginclose}
+            to="/register"
+            className={styles.neutral_link}
+          >
+            Je n'ai pas encore de compte
+          </Link>
+        </div>
+      ) : (
+        <div
+          className={
+            openLogin ? `${styles.input_box}` : `${styles.input_box_close}`
+          }
+        >
+          <p className={styles.logAsUser}>
+            connecté en tant que : {user.firstname}
+          </p>
           <Button
             type="submit"
             color="primary"
             variant="contained"
+            onClick={logoutFromSession}
             sx={{ my: 2 }}
           >
-            se connecter
+            se déconnecter
           </Button>
-        </Link>
-        <Link
-          onClick={handleLoginclose}
-          to="/register"
-          className={styles.neutral_link}
-        >
-          Je n'ai pas encore de compte
-        </Link>
-      </div>
+        </div>
+      )}
 
       <div
         className={

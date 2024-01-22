@@ -2,13 +2,16 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 import { TextField, Button } from "@mui/material";
+import { useUserContext } from "../../contexts/userContext";
 import globalStyles from "../GlobalPageStyle.module.css";
 import styles from "./Auth.module.css";
 
-export default function Register() {
+export default function Login() {
   // États pour le mot de passe et la confirmation du mot de passe
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+
+  const { login } = useUserContext();
 
   // Hook pour la navigation
   const navigate = useNavigate();
@@ -45,6 +48,8 @@ export default function Register() {
 
       // Redirection vers la page de connexion si la création réussit
       if (response.status === 200) {
+        const auth = await response.json();
+        login(auth);
         notifySuccess("Connexion réussi. Bon retour parmi nous !");
         navigate("/");
       } else {
