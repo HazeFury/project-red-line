@@ -1,6 +1,7 @@
 // Load the express module to create a web application
 
 const express = require("express");
+const cookieparser = require("cookie-parser");
 
 const app = express();
 
@@ -25,13 +26,15 @@ const app = express();
 // 4. Be sure to only have URLs in the array with domains from which you want to allow requests.
 // For example: ["http://mysite.com", "http://another-domain.com"]
 
+app.use(cookieparser());
+
 const cors = require("cors");
 
 app.use(
   cors({
-    origin: [
-      process.env.FRONTEND_URL, // keep this one, after checking the value in `backend/.env`
-    ],
+    origin: process.env.FRONTEND_URL ?? "http://localhost:3000",
+    optionsSuccessStatus: 200,
+    credentials: true,
   })
 );
 

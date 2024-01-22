@@ -40,10 +40,10 @@ export default function Login({ setOpenLogin }) {
       // Redirection vers la page de connexion si la création réussit
       if (response.status === 200) {
         const auth = await response.json();
-        login(auth);
+        login(auth.user);
         setOpenLogin(false);
         notifySuccess("Connexion réussi. Bon retour parmi nous !");
-        navigate("/");
+        navigate("/admin");
       } else {
         // Log des détails de la réponse en cas d'échec
         console.info(response);

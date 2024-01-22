@@ -48,8 +48,8 @@ export default function Login() {
 
       // Redirection vers la page de connexion si la création réussit
       if (response.status === 200) {
-        const auth = await response.json();
-        login(auth);
+        const user = await response.json();
+        login(user);
         notifySuccess("Connexion réussi. Bon retour parmi nous !");
         navigate("/");
       } else {

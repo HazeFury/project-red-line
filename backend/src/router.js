@@ -41,5 +41,6 @@ router.get("/welcomeadmin", verifyToken, userControllers.welcomeAdmin); // <----
 const authControllers = require("./controllers/authControllers");
 
 router.post("/login", authControllers.login);
+router.get("/logout", authControllers.logout);
 
 module.exports = router;

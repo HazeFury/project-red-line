@@ -31,8 +31,12 @@ const login = async (req, res, next) => {
         }
       );
 
+      res.cookie("access_token", token, {
+        // httpOnly: true,
+        // secure: process.env.NODE_ENV === "production",
+      });
+
       res.json({
-        token,
         user,
       });
     } else {
@@ -44,6 +48,11 @@ const login = async (req, res, next) => {
   }
 };
 
+const logout = (req, res) => {
+  res.clearCookie("access_token").sendStatus(200);
+};
+
 module.exports = {
   login,
+  logout,
 };
