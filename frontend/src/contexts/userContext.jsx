@@ -37,7 +37,7 @@ export function UserContextProvider({ children }) {
   };
 
   useEffect(() => {
-    console.info("les infos du user dans le LS sont :", userData); // ------------------  TO REMOVE !!
+    console.info("les infos du user dans le LS sont :", userData?.user); // ------------------  TO REMOVE !!
   }, [userData]);
 
   const contextValue = useMemo(() => {

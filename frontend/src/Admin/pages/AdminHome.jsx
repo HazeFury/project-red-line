@@ -20,7 +20,7 @@ export default function AdminHome() {
 
             // Authorization: `Bearer ${token}`,  // Inclusion du jeton JWT (ancienne version)
           },
-          credentials: "same-origin",
+          credentials: "include",
         }
       );
 

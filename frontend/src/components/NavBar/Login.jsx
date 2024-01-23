@@ -30,6 +30,7 @@ export default function Login({ setOpenLogin }) {
         {
           method: "post",
           headers: { "Content-Type": "application/json" },
+          credentials: "include",
           body: JSON.stringify({
             email: emailRef.current.value,
             password: passwordRef.current.value,

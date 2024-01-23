@@ -1,9 +1,17 @@
 // Load the express module to create a web application
 
 const express = require("express");
-const cookieparser = require("cookie-parser");
 
 const app = express();
+
+// app.use((req, res, next) => {
+//   res.setHeader("Access-Control-Allow-Origin", "http://localhost:3000");
+//   res.header(
+//     "Access-Control-Allow-Headers",
+//     "Origin, X-Requested-With, Content-Type, Accept"
+//   );
+//   next();
+// });
 
 // Configure it
 
@@ -25,8 +33,6 @@ const app = express();
 // 3. Uncomment the section `app.use(cors({ origin: [...] }))`
 // 4. Be sure to only have URLs in the array with domains from which you want to allow requests.
 // For example: ["http://mysite.com", "http://another-domain.com"]
-
-app.use(cookieparser());
 
 const cors = require("cors");
 
@@ -71,8 +77,9 @@ app.use(express.json());
 
 // Then, require the module and use it as middleware in your Express application:
 
-// const cookieParser = require("cookie-parser");
-// app.use(cookieParser());
+const cookieParser = require("cookie-parser");
+
+app.use(cookieParser());
 
 // Once `cookie-parser` is set up, you can read and set cookies in your routes.
 // For example, to set a cookie named "username" with the value "john":

@@ -78,7 +78,7 @@ export default function NavBar() {
           }
         >
           <p className={styles.logAsUser}>
-            connecté en tant que : {userData.user.firstname}
+            connecté en tant que : {userData?.user?.firstname}
           </p>
           <Button
             type="submit"
@@ -106,6 +106,7 @@ export default function NavBar() {
           alt="Proxima-Bike logo"
         />
         <div className={styles.menu_box}>
+          <Link to="/admin">Admin</Link>
           <Link to="/">Accueil</Link>
           <Link to="/bikes">Motos</Link>
           <Link to="/about">À propos</Link>

@@ -62,6 +62,7 @@ const verifyToken = (req, res, next) => {
   try {
     const token = req.cookies.access_token;
     if (!token) {
+      // console.log(req.cookies);
       return res.sendStatus(403);
     }
     req.auth = jwt.verify(token, process.env.APP_SECRET);
