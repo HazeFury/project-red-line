@@ -38,6 +38,7 @@ export default function Login() {
         `${import.meta.env.VITE_BACKEND_URL}/api/login`,
         {
           method: "post",
+          credentials: "include",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify({
             email,

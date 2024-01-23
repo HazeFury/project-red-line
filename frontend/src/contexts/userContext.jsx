@@ -19,6 +19,7 @@ export function UserContextProvider({ children }) {
         `${import.meta.env.VITE_BACKEND_URL}/api/logout`,
         {
           method: "get",
+          credentials: "include",
           headers: { "Content-Type": "application/json" },
         }
       );

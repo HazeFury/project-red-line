@@ -30,11 +30,11 @@ const login = async (req, res, next) => {
           expiresIn: "1h",
         }
       );
-      // console.log("le token est : ", token);
+
       res
         .cookie("access_token", token, {
-          // httpOnly: true,
-          // secure: process.env.NODE_ENV === "production",
+          httpOnly: true,
+          secure: process.env.NODE_ENV === "production",
           maxAge: 60000,
         })
         .json({

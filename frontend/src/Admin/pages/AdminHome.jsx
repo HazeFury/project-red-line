@@ -28,7 +28,7 @@ export default function AdminHome() {
         const data = await response.json();
         // console.log("la réponse à la requête est :", data);
         setMessage(data);
-      } else if (response.status === 401) {
+      } else if (response.status === 403) {
         console.error(response);
         navigate("/login");
       } else {
