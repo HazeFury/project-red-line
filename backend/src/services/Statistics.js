@@ -1,5 +1,9 @@
 const getStatisticsFromArrayOfBikes = (aBikes) => {
-    
+
+    if (!Array.isArray(aBikes) || aBikes.length === 0) {
+      throw new Error("Invalid input: Parameter must be a non-empty array of bikes");
+    }
+
     result = {
       numberBikes: null,
       sumAllKilometers: null,
