@@ -1,7 +1,7 @@
 const getStatisticsFromArrayOfBikes = (aBikes) => {
     
     result = {
-      numberBike: null,
+      numberBikes: null,
       sumAllKilometers: null,
       averageKilometers: null,
       sumAllPrices: null,
@@ -18,7 +18,7 @@ const getStatisticsFromArrayOfBikes = (aBikes) => {
 
     result.averageKilometers = result.sumAllKilometers / nbBikes;
     result.averagePrices = result.sumAllPrices / nbBikes;
-    result.numberBike = nbBikes;
+    result.numberBikes = nbBikes;
 
     return result
 };
