@@ -1,0 +1,19 @@
+.statistics h3 {
+    font-size: 2.5rem;
+    margin-bottom: 40px;
+    font-family: "Montserrat", sans-serif;
+    text-align: center;
+}
+
+.statistics table{
+    text-align: left;
+    margin: auto;
+}
+
+.statistics table td{
+    padding: 0 1rem;
+}
+
+.statistics{
+    margin-bottom: 2rem;
+}
