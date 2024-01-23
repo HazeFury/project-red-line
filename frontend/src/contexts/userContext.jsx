@@ -7,27 +7,43 @@ const userContext = createContext();
 
 // Étape 2 : créer le provider de mon context
 export function UserContextProvider({ children }) {
-  const [user, setUser] = useLocalStorage("user", null);
-  const [token, setToken] = useLocalStorage("token", "");
+  const [userData, setUserData] = useLocalStorage("user", null);
 
-  const login = (userData) => {
-    setUser(userData.user);
-    setToken(userData.token);
+  const login = (userInfo) => {
+    setUserData(userInfo);
   };
 
-  const logout = () => {
-    setUser(null);
-    setToken(null);
+  const logout = async () => {
+    try {
+      const response = await fetch(
+        `${import.meta.env.VITE_BACKEND_URL}/api/logout`,
+        {
+          method: "get",
+          credentials: "include",
+          headers: { "Content-Type": "application/json" },
+        }
+      );
+
+      // Redirection vers la page de connexion si la création réussit
+      if (response.status === 200) {
+        setUserData(null);
+      } else {
+        // Log des détails de la réponse en cas d'échec
+        console.info(response);
+      }
+    } catch (err) {
+      // Log des erreurs possibles
+      console.error(err);
+    }
   };
 
   useEffect(() => {
-    console.info("les infos du user dans le LS sont :", user); // ------------------  TO REMOVE !!
-    console.info("le token est :", token); // ------------------  TO REMOVE !!
-  }, [user]);
+    console.info("les infos du user dans le LS sont :", userData?.user); // ------------------  TO REMOVE !!
+  }, [userData]);
 
   const contextValue = useMemo(() => {
-    return { user, setUser, login, logout, token, setToken };
-  }, [user, token]);
+    return { userData, setUserData, login, logout };
+  }, [userData]);
 
   return (
     <userContext.Provider value={contextValue}>{children}</userContext.Provider>

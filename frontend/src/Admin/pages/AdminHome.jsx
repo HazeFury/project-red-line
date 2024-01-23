@@ -5,7 +5,7 @@ import styles from "./AdminHome.module.css";
 
 export default function AdminHome() {
   const [message, setMessage] = useState(null);
-  const { user, token } = useUserContext();
+  const { userData } = useUserContext();
   const navigate = useNavigate();
 
   const autorisation = async () => {
@@ -17,8 +17,10 @@ export default function AdminHome() {
           method: "get",
           headers: {
             "Content-Type": "application/json",
-            Authorization: `Bearer ${token}`, // Inclusion du jeton JWT
+
+            // Authorization: `Bearer ${token}`,  // Inclusion du jeton JWT (ancienne version)
           },
+          credentials: "include",
         }
       );
 
@@ -26,7 +28,8 @@ export default function AdminHome() {
         const data = await response.json();
         // console.log("la réponse à la requête est :", data);
         setMessage(data);
-      } else if (response.status === 401) {
+      } else if (response.status === 403) {
+        console.error(response);
         navigate("/login");
       } else {
         // Log des détails de la réponse en cas d'échec
@@ -46,7 +49,7 @@ export default function AdminHome() {
   return (
     <div className={styles.admin_home}>
       <div className={styles.admin_home_container}>
-        <h1>Connecté en tant que {user?.email}</h1>
+        <h1>Connecté en tant que {userData?.user.email}</h1>
         <br />
         <p>{message}</p>
       </div>

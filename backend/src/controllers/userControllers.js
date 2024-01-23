@@ -59,13 +59,13 @@ const add = async (req, res, next) => {
 
 // -------------------------------------------------------------------------------------
 
-const welcomeAdmin = (req, res, next) => {
+const welcomeAdmin = (req, res) => {
   try {
     res.status(200).json("La page Admin est en construction.");
   } catch (err) {
     // Pass any errors to the error-handling middleware
+    res.status(404).json(err);
     console.error(err);
-    next(err);
   }
 };
 

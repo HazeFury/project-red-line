@@ -12,7 +12,7 @@ import { useUserContext } from "../../contexts/userContext";
 export default function NavBar() {
   const [openMenu, setOpenMenu] = useState(false);
   const [openLogin, setOpenLogin] = useState(false);
-  const { user, logout } = useUserContext();
+  const { userData, logout } = useUserContext();
   // const navigate = useNavigate();
   const notifySuccess = (text) => toast.success(text);
 
@@ -46,7 +46,7 @@ export default function NavBar() {
   }, []);
   return (
     <>
-      {!user ? (
+      {!userData ? (
         <div
           className={
             openLogin ? `${styles.input_box}` : `${styles.input_box_close}`
@@ -78,7 +78,7 @@ export default function NavBar() {
           }
         >
           <p className={styles.logAsUser}>
-            connecté en tant que : {user.firstname}
+            connecté en tant que : {userData?.user?.firstname}
           </p>
           <Button
             type="submit"
@@ -106,6 +106,7 @@ export default function NavBar() {
           alt="Proxima-Bike logo"
         />
         <div className={styles.menu_box}>
+          <Link to="/admin">Admin</Link>
           <Link to="/">Accueil</Link>
           <Link to="/bikes">Motos</Link>
           <Link to="/about">À propos</Link>
