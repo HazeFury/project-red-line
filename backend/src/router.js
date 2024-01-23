@@ -25,6 +25,7 @@ router.post("/items", itemControllers.add);
 /* ************************************************************************* */
 
 router.get("/bikes", bikeControllers.getBikes);
+router.get("/bikes/statistics", bikeControllers.getBikesStatictics)
 
 /* ************************************************************************* */
 
